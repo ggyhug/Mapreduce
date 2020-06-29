@@ -1,10 +1,3 @@
-# <center>云计算项目实践</center>
-
-### <center>17341043</center>
-
-### <center>郭工瑶</center>
-
-### <center>数据科学与计算机学院</center>
 
 #### 一.实验内容
 选项1、基于Hadoop平台设计编写一个MapReduce程序，具体功能自行确定。
@@ -57,13 +50,13 @@ until 簇不发生变化或达到最大迭代次数
 6. main中获取counter的值，看是否等于质心，如果不相等，那么继续迭代，否则退出
 
 代码结构：
-[Center.java](kmeans/Center.java):设置初始样本质心以及迭代后的质心
+1. [Center.java](kmeans/Center.java):设置初始样本质心以及迭代后的质心
 
-[TokenizerMap](kmeans/TokenizerMapper.java):计算样本点中最近的质心，形成蔟（聚类）
+2. [TokenizerMap](kmeans/TokenizerMapper.java):计算样本点中最近的质心，形成蔟（聚类）
 
-[IntSumReduce.java](kmeans/IntSumReducer.java):根据聚类生成新的质心并且判断新的质心是否于原来相同，然后进行对应操作
+3. [IntSumReduce.java](kmeans/IntSumReducer.java):根据聚类生成新的质心并且判断新的质心是否于原来相同，然后进行对应操作
 
-[Run.java](kmeans/Run.java):设定输入输出，整合并且迭代求出最终质心。
+4. [Run.java](kmeans/Run.java):设定输入输出，整合并且迭代求出最终质心。
 ```
 javac Run.java
 jar cvf Run.jar ./Run.class TokenizerMapper.class IntSumReducer.class Center.class
